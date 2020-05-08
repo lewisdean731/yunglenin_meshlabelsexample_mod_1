@@ -1,7 +1,5 @@
 -- yl_meshlabelutil.lua
 -- Create a 'meshlabel' using supplied parameters. Currently, it only works with the numbers 0-9.
-local pprint = require('pprint')
-
 local yl_meshlabelutil = {}
 
 function yl_meshlabelutil.sampleTable()
@@ -65,22 +63,13 @@ function yl_meshlabelutil.createMeshlabel(label_colour, label_text, transf)
     label_text_split = splitText(label_text)
     transf = transf
     
-    print("-- t1 --")
-
     meshlabel_sequence = generateLabelText(label_text_split, label_colour)
-
-    print("-- t2 --")
-
     meshlabel_set = generateMeshlabelSet(meshlabel_sequence)
 
     print("-- meshlabel vars --")
     print("label_text_split:", table.concat(label_text_split, ","))
     print("meshlabel_sequence:", table.concat( meshlabel_sequence, ","))
     print("meshlabel_set:", meshlabel_set)
-    print("meshlabels:")
-    for i, type in ipairs(meshlabel_set) do
-        pprint(i, type)
-    end
     print("-- end --")
 
     return
@@ -88,7 +77,6 @@ function yl_meshlabelutil.createMeshlabel(label_colour, label_text, transf)
         children = meshlabel_set,
         transf = transf,
         name = "meshlabel"
-
     }
 end
 
