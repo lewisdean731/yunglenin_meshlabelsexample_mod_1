@@ -8,10 +8,9 @@ local yl_numberutil = require "yl_numberutil"
 local yl_meshlabelutil = require "yl_meshlabelutil"
 ```
 
-Generate the either a random or semi-random number. use ```x``` to denote where a number should be randomised.
+Generate either a random or semi-random number. use ```x``` to denote where a number should be randomised.
 ```lua
 local number = yl_numberutil.generate("1502xx")
-print(number)
 ```
 
 Specify the transformation matrix to place the meshlabel relative to the root node's tranf
