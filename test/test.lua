@@ -12,7 +12,28 @@ function Tests:setUp()
     self.randomNumber = yl_numberutil.generate("123xxx")
     self.badRandomNumber = yl_numberutil.generate("12abc34")
     self.badRandomNumber2 = yl_numberutil.generate("xxabcxx")
+
+    self.exampleTransf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, }
+    self.meshlabelFixedBlack = yl_meshlabelutil.createMeshlabel("BLACK", "123456", self.exampleTransf)
+    self.meshlabelRandomBlack = yl_meshlabelutil.createMeshlabel("BLACK", "123xxx", self.exampleTransf)
+    self.meshlabelExample = {
+        children = {
+            {
+                materials = { "yunglenin/meshlabels/yl_meshlabels.mtl", },
+                mesh = "yunglenin/meshlabels/yl_meshlabel_b_1.msh",
+                transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.6, 0, 1, },
+            },
+            {
+                materials = { "yunglenin/meshlabels/yl_meshlabels.mtl", },
+                mesh = "yunglenin/meshlabels/yl_meshlabel_b_2.msh",
+                transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 3.2, 0, 1, },
+            },
+        },
+        transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+        name = "meshlabel"
+    }
 end
+
 -- numberutil
 
 function Tests:test_Numberutil_FixedNumber()
@@ -31,9 +52,13 @@ function Tests:test_Numberutil_BadRandomNumber2()
     lu.assertNotStrContains(self.badRandomNumber2, "xxabcxx")
 end
 
-function Tests:testRandomNumber()
-    lu.assertAlmostEquals(tonumber(self.randomNumber),  123500, 500)
+--meshlabelutil
+
+function Tests:test_Meshlabelutil_ValidateStructure()
+    meshlabel = yl_meshlabelutil.createMeshlabel("BLACK", "12", self.exampleTransf)
+    lu.assertEquals(meshlabel, self.meshlabelExample)
 end
+
 
 local runner = lu.LuaUnit.new()
 runner:setOutputType("text")
