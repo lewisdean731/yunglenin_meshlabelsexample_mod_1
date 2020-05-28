@@ -2,14 +2,6 @@
 -- Create a 'meshlabel' using supplied parameters. Currently, it only works with the numbers 0-9.
 local yl_meshlabelutil = {}
 
-function yl_meshlabelutil.sampleTable()
-    return {
-        "apple",
-        "orange",
-        "grape"
-    }
-end
-
 -- Split text into chars. Regex to use only numbers 0-9
 function splitText(text)
     split_text = {}
@@ -39,7 +31,7 @@ function generateMeshlabelSet(meshlabel_sequence) -- b1, b2, b3 ...
                 materials = { "yunglenin/meshlabels/yl_meshlabels.mtl", },
                 mesh = "yunglenin/meshlabels/yl_meshlabel_" .. type .. ".msh",
                 transf = meshlabel_transf,
-            } 
+            }
         )
     end
 
@@ -48,12 +40,12 @@ end
 
 -- Returns a transf  based on the index in the sequence
 function calcMeshlabelTransf(meshlabel_index)
-    return 
-    { 
-        1, 0, 0, 0, 
-        0, 1, 0, 0, 
-        0, 0, 1, 0, 
-        0, meshlabel_index*1.6, 0, 1, 
+    return
+    {
+        1, 0, 0, 0,
+        0, 1, 0, 0,
+        0, 0, 1, 0,
+        0, meshlabel_index*1.6, 0, 1,
     }
 end
 
@@ -62,15 +54,15 @@ function yl_meshlabelutil.createMeshlabel(label_colour, label_text, transf)
     label_colour = label_colour
     label_text_split = splitText(label_text)
     transf = transf
-    
+
     meshlabel_sequence = generateLabelText(label_text_split, label_colour)
     meshlabel_set = generateMeshlabelSet(meshlabel_sequence)
 
-    print("-- meshlabel vars --")
-    print("label_text_split:", table.concat(label_text_split, ","))
-    print("meshlabel_sequence:", table.concat( meshlabel_sequence, ","))
-    print("meshlabel_set:", meshlabel_set)
-    print("-- end --")
+    --print("-- meshlabel vars --")
+    --print("label_text_split:", table.concat(label_text_split, ","))
+    --print("meshlabel_sequence:", table.concat( meshlabel_sequence, ","))
+    --print("meshlabel_set:", meshlabel_set)
+    --print("-- end --")
 
     return
     {
@@ -82,8 +74,8 @@ end
 
 -- Take a given char and return correct meshlabel. Only BLACK supported at the
 function mapToMeshlabel(char, label_colour)
-    print(char)
-    print(label_colour)
+    --print(char)
+    --print(label_colour)
     if label_colour == "BLACK" then
         if char == "1" then
             return "b_1"

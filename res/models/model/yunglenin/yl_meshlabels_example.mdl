@@ -7,9 +7,6 @@ local yl_meshlabelutil = require "yl_meshlabelutil"
 local train_number = yl_numberutil.generate("1502xx")
 print(train_number)
 
-sampleTable = yl_meshlabelutil.sampleTable()
-print(table.concat(sampleTable))
-
 transf = {0.065, 0, 0, 0, 0, 0.065, 0, 0, 0, 0, 0.065, 0, 9.86, 0.47, 1.94, 1, }
 meshlabel = yl_meshlabelutil.createMeshlabel("BLACK", train_number, transf)
 --------------------------------
@@ -134,7 +131,7 @@ return {
 					innerForwardParts = { },
 				},
 			},
-			engines = { 
+			engines = {
 				{
 					power = 250,
 					tractiveEffort = 250,
