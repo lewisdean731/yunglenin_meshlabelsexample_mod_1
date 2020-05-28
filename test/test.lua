@@ -4,7 +4,6 @@ Tests = {}
 
 function Tests:setUp()
     self.aValue = 1
-    self.bValue = 2
 end
 
 function Tests:test1()

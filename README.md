@@ -23,5 +23,10 @@ Create the meshlabel set, providing the colour, number and transf
 meshlabel = yl_meshlabelutil.createMeshlabel("BLACK", number, transf)
 ```
 
+## Testing
+```bash
+lua test/test.lua
+```
+
 ## Issues
-Once an ```.mdl``` is loaded, the random meshlabel actually becomes static. This means all instances of the same `.mdl` will have the same random number. However, separate ```.mdl```s with the same implementation will have a different random number applied to all its instances. 
+Once an ```.mdl``` is loaded, the random meshlabel actually becomes static. This means all instances of the same `.mdl` will have the same random number. However, separate ```.mdl```s with the same implementation will have a different random number applied to all its instances.
