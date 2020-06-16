@@ -14,8 +14,6 @@ function Tests:setUp()
     self.badRandomNumber2 = yl_numberutil.generate("xxabcxx")
 
     self.exampleTransf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, }
-    self.meshlabelFixedBlack = yl_meshlabelutil.createMeshlabel("BLACK", "123456", self.exampleTransf)
-    self.meshlabelRandomBlack = yl_meshlabelutil.createMeshlabel("BLACK", "123xxx", self.exampleTransf)
     self.meshlabelExample = {
         children = {
             {
