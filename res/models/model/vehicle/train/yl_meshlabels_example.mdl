@@ -1,0 +1,43 @@
+
+
+-- MESHLABELS --
+local yl_numberutil = require "yl_numberutil"
+local yl_meshlabelutil = require "yl_meshlabelutil"
+
+local train_number = yl_numberutil.generate("1502xx")
+
+transf = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 9.86, 0, 1.94, 1, }
+meshlabel = yl_meshlabelutil.createMeshlabel("BLACK", train_number, transf)
+--------------------------------
+
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 10, 1, 4, },
+		bbMin = { -10, -1, 0, },
+	},
+	collider = {
+		params = {
+			halfExtents = { 10.185299873352, 1.4471800327301, 2.0193150043488, },
+		},
+		transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.03279972076416, 0, 1.9885851144791, 1, },
+		type = "BOX",
+	},
+	lods = {
+		{
+			node = {
+				children = {
+					meshlabel, --MESHLABEL
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 2500,
+		},
+	},
+	metadata = {},
+	version = 1,
+}
+end
