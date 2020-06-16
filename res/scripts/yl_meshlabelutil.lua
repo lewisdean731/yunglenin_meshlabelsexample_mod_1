@@ -58,12 +58,6 @@ function yl_meshlabelutil.createMeshlabel(label_colour, label_text, transf)
     meshlabel_sequence = generateLabelText(label_text_split, label_colour)
     meshlabel_set = generateMeshlabelSet(meshlabel_sequence)
 
-    --print("-- meshlabel vars --")
-    --print("label_text_split:", table.concat(label_text_split, ","))
-    --print("meshlabel_sequence:", table.concat( meshlabel_sequence, ","))
-    --print("meshlabel_set:", meshlabel_set)
-    --print("-- end --")
-
     return
     {
         children = meshlabel_set,
@@ -74,8 +68,6 @@ end
 
 -- Take a given char and return correct meshlabel. Only BLACK supported at the
 function mapToMeshlabel(char, label_colour)
-    --print(char)
-    --print(label_colour)
     if label_colour == "BLACK" then
         if char == "1" then
             return "b_1"
