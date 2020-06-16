@@ -27,7 +27,7 @@ Specify the transformation matrix to place the meshlabel relative to the root no
 transf = {0.065, 0, 0, 0, 0, 0.065, 0, 0, 0, 0, 0.065, 0, 9.86, 0.47, 1.94, 1, }
 ```
 
-Create the meshlabel set, providing the colour, number and transf
+Create the meshlabel set, providing the colour, number and transf. `BLACK` or `WHITE` are the only colours currently supported.
 
 ```lua
 meshlabel = yl_meshlabelutil.createMeshlabel("BLACK", number, transf)

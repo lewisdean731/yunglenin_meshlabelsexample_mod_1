@@ -66,7 +66,7 @@ function yl_meshlabelutil.createMeshlabel(label_colour, label_text, transf)
     }
 end
 
--- Take a given char and return correct meshlabel. Only BLACK supported at the
+-- Take a given char and return correct meshlabel.
 function mapToMeshlabel(char, label_colour)
     if label_colour == "BLACK" then
         if char == "1" then
