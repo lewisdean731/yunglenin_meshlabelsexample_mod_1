@@ -13,6 +13,10 @@ function yl_numberutil.generate(input)
     return table.concat(input_table)
 end
 
+function yl_numberutil.generateRange(min, max)
+    return math.random(tonumber(min), tonumber(max))
+end
+
 function chooseNumber(char)
     if char == "x" then
         return math.random(0,9)

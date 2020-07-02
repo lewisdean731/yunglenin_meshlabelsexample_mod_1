@@ -10,6 +10,7 @@ Tests = {}
 function Tests:setUp()
     self.fixedNumber = yl_numberutil.generate("123456")
     self.randomNumber = yl_numberutil.generate("123xxx")
+    self.rangedNumber = yl_numberutil.generateRange(12200, 12250)
     self.badRandomNumber = yl_numberutil.generate("12abc34")
     self.badRandomNumber2 = yl_numberutil.generate("xxabcxx")
 
@@ -40,6 +41,10 @@ end
 
 function Tests:test_Numberutil_RandomNumber()
     lu.assertAlmostEquals(tonumber(self.randomNumber), 123500, 500)
+end
+
+function Tests:test_Numberutil_Range()
+    lu.assertAlmostEquals(tonumber(self.rangedNumber), 12225, 25)
 end
 
 function Tests:test_Numberutil_BadRandomNumber()
