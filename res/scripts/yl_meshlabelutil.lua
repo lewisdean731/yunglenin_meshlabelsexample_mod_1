@@ -5,7 +5,7 @@ local yl_meshlabelutil = {}
 -- Split text into chars. Regex to use only numbers 0-9
 function splitText(text)
     split_text = {}
-    for i in string.gmatch(text , "([0-9])") do
+    for i in string.gmatch(text , "(%S)") do
         table.insert(split_text,i)
     end
     return split_text
@@ -14,8 +14,8 @@ end
 -- Take a given text and returns the correct meshlabel sequence
 function generateLabelText(text_table, label_colour)
     meshlabel_sequence = {}
-    for i, number in ipairs(text_table) do
-        meshlabel_name = mapToMeshlabel(number, label_colour)
+    for i, char in ipairs(text_table) do
+        meshlabel_name = mapToMeshlabel(char, label_colour)
         table.insert(meshlabel_sequence, meshlabel_name)
     end
     return meshlabel_sequence -- return {"b_1", "b_5", "b_0", "b_2", "b_4", "b_6"}
@@ -129,6 +129,85 @@ function mapToMeshlabel(char, label_colour)
         end
         if char == "0" then
             return "w_0"
+        end
+        --------------------------------
+        if char == "a" then
+            return "w_a"
+        end
+        if char == "b" then
+            return "w_b"
+        end
+        if char == "c" then
+            return "w_c"
+        end
+        if char == "d" then
+            return "w_d"
+        end
+        if char == "e" then
+            return "w_e"
+        end
+        if char == "f" then
+            return "w_f"
+        end
+        if char == "g" then
+            return "w_g"
+        end
+        if char == "h" then
+            return "w_h"
+        end
+        if char == "i" then
+            return "w_i"
+        end
+        if char == "j" then
+            return "w_j"
+        end
+        if char == "k" then
+            return "w_k"
+        end
+        if char == "l" then
+            return "w_l"
+        end
+        if char == "m" then
+            return "w_m"
+        end
+        if char == "n" then
+            return "w_n"
+        end
+        if char == "o" then
+            return "w_o"
+        end
+        if char == "p" then
+            return "w_p"
+        end
+        if char == "q" then
+            return "w_q"
+        end
+        if char == "r" then
+            return "w_r"
+        end
+        if char == "s" then
+            return "w_s"
+        end
+        if char == "t" then
+            return "w_t"
+        end
+        if char == "u" then
+            return "w_u"
+        end
+        if char == "v" then
+            return "w_v"
+        end
+        if char == "w" then
+            return "w_w"
+        end
+        if char == "x" then
+            return "w_x"
+        end
+        if char == "y" then
+            return "w_y"
+        end
+        if char == "z" then
+            return "w_z"
         end
     else
         return "b_1"

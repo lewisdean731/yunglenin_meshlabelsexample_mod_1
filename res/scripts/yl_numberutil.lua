@@ -3,7 +3,6 @@ yl_numberutil = {}
 
 -- Generate a number from the input.
 -- x = random
--- s = space (to be implemented)
 function yl_numberutil.generate(input)
     input = string.lower(input)
     input_table = splitToChar(input)
