@@ -15,11 +15,21 @@ local yl_numberutil = require "yl_numberutil"
 local yl_meshlabelutil = require "yl_meshlabelutil"
 ```
 
+### numberutil
+
 Generate either a random or semi-random number, as a string. use ```x``` to denote where a number should be randomised.
 
 ```lua
 local number = yl_numberutil.generate("1502xx") -- Will return e.g. "150238" or "150292"
 ```
+
+Generate a number within a range:
+
+```lua
+local number = yl_numberutil.generateRange(12001, 12050) -- Will return e.g. "12024" or "12013"
+```
+
+### meshlabelutil
 
 Specify the transformation matrix to place the meshlabel relative to the root node's tranf
 
@@ -27,10 +37,16 @@ Specify the transformation matrix to place the meshlabel relative to the root no
 transf = {0.065, 0, 0, 0, 0, 0.065, 0, 0, 0, 0, 0.065, 0, 9.86, 0.47, 1.94, 1, }
 ```
 
-Create the meshlabel set, providing the colour, number and transf. `BLACK` or `WHITE` are the only colours currently supported.
+Create the meshlabel set, providing the colour, text and transf. `BLACK` or `WHITE` are the only colours currently supported.
 
 ```lua
-meshlabel = yl_meshlabelutil.createMeshlabel("BLACK", number, transf)
+meshlabel = yl_meshlabelutil.createMeshlabel("BLACK", text, transf)
+```
+
+You can also provide a string like so:
+
+```lua
+meshlabel = yl_meshlabelutil.createMeshlabel("WHITE", "hello", transf)
 ```
 
 Insert the meshlabel(s) you have created into the mesh list of your ```.mdl```.
