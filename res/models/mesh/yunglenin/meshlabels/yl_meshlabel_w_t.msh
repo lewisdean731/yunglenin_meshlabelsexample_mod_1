@@ -12,11 +12,11 @@ return {
 				},
 				position = {
 					count = 24,
-					offset = 108,
+					offset = 156,
 				},
 				tangent = {
 					count = 24,
-					offset = 156,
+					offset = 108,
 				},
 				uv0 = {
 					count = 24,
@@ -29,17 +29,17 @@ return {
 		normal = {
 			count = 12,
 			numComp = 3,
-			offset = 48,
+			offset = 16,
 		},
 		position = {
 			count = 48,
 			numComp = 3,
-			offset = 0,
+			offset = 28,
 		},
 		tangent = {
 			count = 16,
 			numComp = 4,
-			offset = 60,
+			offset = 0,
 		},
 		uv0 = {
 			count = 32,
