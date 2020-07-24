@@ -2,7 +2,16 @@
 -- Create a 'meshlabel' using supplied parameters. Currently, it only works with the numbers 0-9.
 local yl_meshlabelutil = {}
 
+-- Materials
 yl_meshlabelutil.material = "yunglenin/meshlabels/yl_meshlabels.mtl"
+
+function yl_meshlabelutil.setMaterial(providedMaterial)
+    yl_meshlabelutil.material = providedMaterial
+end
+
+function yl_meshlabelutil.resetMaterial()
+    yl_meshlabelutil.material = "yunglenin/meshlabels/yl_meshlabels.mtl"
+end
 
 -- Split text into chars. Regex to use only numbers 0-9
 function splitText(text)

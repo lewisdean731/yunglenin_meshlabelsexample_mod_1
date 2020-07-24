@@ -79,11 +79,11 @@ function Tests:test_Meshlabelutil_ValidateStructure()
 end
 
 function Tests:test_Meshlabelutil_DifferentMaterials()
-    yl_meshlabelutil.material = "yunglenin/different/material.mtl"
+    yl_meshlabelutil.setMaterial("yunglenin/different/material.mtl")
     meshlabel = yl_meshlabelutil.createMeshlabel("WHITE", "12", self.exampleTransf)
     lu.assertEquals(meshlabel, self.meshlabelExampleDifferentMaterials)
 
-    yl_meshlabelutil.material = "yunglenin/meshlabels/yl_meshlabels.mtl"
+    yl_meshlabelutil.resetMaterial()
 end
 
 
