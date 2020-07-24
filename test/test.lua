@@ -31,6 +31,22 @@ function Tests:setUp()
         transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
         name = "meshlabel"
     }
+    self.meshlabelExampleDifferentMaterials = {
+        children = {
+            {
+                materials = { "yunglenin/different/material.mtl", },
+                mesh = "yunglenin/meshlabels/yl_meshlabel_w_1.msh",
+                transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.6, 0, 1, },
+            },
+            {
+                materials = { "yunglenin/different/material.mtl", },
+                mesh = "yunglenin/meshlabels/yl_meshlabel_w_2.msh",
+                transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 3.2, 0, 1, },
+            },
+        },
+        transf = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+        name = "meshlabel"
+    }
 end
 
 -- numberutil
@@ -60,6 +76,14 @@ end
 function Tests:test_Meshlabelutil_ValidateStructure()
     meshlabel = yl_meshlabelutil.createMeshlabel("BLACK", "12", self.exampleTransf)
     lu.assertEquals(meshlabel, self.meshlabelExample)
+end
+
+function Tests:test_Meshlabelutil_DifferentMaterials()
+    yl_meshlabelutil.setMaterial("yunglenin/different/material.mtl")
+    meshlabel = yl_meshlabelutil.createMeshlabel("WHITE", "12", self.exampleTransf)
+    lu.assertEquals(meshlabel, self.meshlabelExampleDifferentMaterials)
+
+    yl_meshlabelutil.resetMaterial()
 end
 
 

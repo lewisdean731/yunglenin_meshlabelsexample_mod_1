@@ -57,6 +57,20 @@ lods = {
 ...
 ```
 
+### Custom Materials (fonts)
+
+If you want to use a custom material (font) for meshlabels:
+
+```lua
+yl_meshlabelutil.setMaterial("path/to/your/material.mtl")
+```
+
+**NOTE: to avoid propogating custom materials to other mods, you need to reset the material to the default value when you are done:**
+
+```lua
+yl_meshlabelutil.resetMaterial()
+```
+
 ## Testing
 
 ```bash
