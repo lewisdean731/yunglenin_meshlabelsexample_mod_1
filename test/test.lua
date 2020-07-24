@@ -44,7 +44,7 @@ function Tests:test_Numberutil_RandomNumber()
 end
 
 function Tests:test_Numberutil_Range()
-    lu.assertAlmostEquals(tonumber(self.badRandomNumber2), 12225, 25)
+    lu.assertAlmostEquals(tonumber(self.rangedNumber), 12225, 25)
 end
 
 function Tests:test_Numberutil_BadRandomNumber()
