@@ -2,6 +2,8 @@
 -- Create a 'meshlabel' using supplied parameters. Currently, it only works with the numbers 0-9.
 local yl_meshlabelutil = {}
 
+yl_meshlabelutil.material = "yunglenin/meshlabels/yl_meshlabels.mtl"
+
 -- Split text into chars. Regex to use only numbers 0-9
 function splitText(text)
     split_text = {}
@@ -28,7 +30,7 @@ function generateMeshlabelSet(meshlabel_sequence) -- b1, b2, b3 ...
         meshlabel_transf = calcMeshlabelTransf(i)
         table.insert(meshlabel_set,
             {
-                materials = { "yunglenin/meshlabels/yl_meshlabels.mtl", },
+                materials = { yl_meshlabelutil.material, },
                 mesh = "yunglenin/meshlabels/yl_meshlabel_" .. type .. ".msh",
                 transf = meshlabel_transf,
             }
