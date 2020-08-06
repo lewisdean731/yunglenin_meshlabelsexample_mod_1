@@ -4,13 +4,46 @@
 local yl_numberutil = require "yl_numberutil"
 local yl_meshlabelutil = require "yl_meshlabelutil"
 
-local train_number = yl_numberutil.generate("1502xx")
+local number1 = yl_numberutil.generate("xxxxxxxx")
+local number2 = yl_numberutil.generate("xxxxxx")
+local number3 = yl_numberutil.generate("xxxxxx")
+local number4 = yl_numberutil.generate("xxx")
+local number5 = yl_numberutil.generate("xxxxxxxxx")
+local number6 = yl_numberutil.generate("xxxxxx")
+local number7 = yl_numberutil.generate("xxxx")
 
-transf = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 9.86, 0, 1.94, 1, }
-meshlabel = yl_meshlabelutil.createMeshlabel("BLACK", train_number, transf)
+transf0 = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, -8.86, -10, 6.94, 1, }
+meshlabel0 = yl_meshlabelutil.createMeshlabel("BLACK", "0118 999 881 999 119 725 3", transf0)
 
-transf2 = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 4.86, 0, 1.94, 1, }
-meshlabel2 = yl_meshlabelutil.createMeshlabel("WHITE", "hello world", transf2)
+transf1 = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -2.86, 10, 3.94, 1, }
+meshlabel1 = yl_meshlabelutil.createMeshlabel("BLACK", number1, transf1)
+
+transf2 = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 0.86, 5, 0.94, 1, }
+meshlabel2 = yl_meshlabelutil.createMeshlabel("BLACK", number2, transf2)
+
+transf3 = {0.3, 0, 0, 0, 0, 0.3, 0, 0, 0, 0, 0.3, 0, -3.86, -10, 6.94, 1, }
+meshlabel3 = yl_meshlabelutil.createMeshlabel("BLACK", number3, transf3)
+
+transf4 = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 1.86, 3, 3.94, 1, }
+meshlabel4 = yl_meshlabelutil.createMeshlabel("BLACK", number4, transf4)
+
+transf5 = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 3.86, -7, 3.94, 1, }
+meshlabel5 = yl_meshlabelutil.createMeshlabel("BLACK", number5, transf5)
+
+transf6 = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, -4.86, -3, 2.94, 1, }
+meshlabel6 = yl_meshlabelutil.createMeshlabel("BLACK", number6, transf6)
+
+transf7 = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 1.86, -1, 3.3, 1, }
+meshlabel7 = yl_meshlabelutil.createMeshlabel("BLACK", number7, transf7)
+
+transfx = {3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, -10, -25, 12.94, 1, }
+meshlabelx = yl_meshlabelutil.createMeshlabel("WHITE", "meshlabels", transfx)
+
+transfy = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 14, 0, 1, 1, }
+meshlabely = yl_meshlabelutil.createMeshlabel("BLACK", "Yung", transfy)
+
+transfl = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 14, 4, 1, 1, }
+meshlabell = yl_meshlabelutil.createMeshlabel("BLACK", "Lenin", transfl)
 --------------------------------
 
 function data()
@@ -30,8 +63,17 @@ return {
 		{
 			node = {
 				children = {
-					meshlabel, --MESHLABEL
+					meshlabelx, --MESHLABEL
+					meshlabely, --MESHLABEL
+					meshlabell, --MESHLABEL
+					meshlabel0, --MESHLABEL
+					meshlabel1, --MESHLABEL
 					meshlabel2, --MESHLABEL
+					meshlabel3, --MESHLABEL
+					meshlabel4, --MESHLABEL
+					meshlabel5, --MESHLABEL
+					meshlabel6, --MESHLABEL
+					meshlabel7, --MESHLABEL
 				},
 				name = "RootNode",
 				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
