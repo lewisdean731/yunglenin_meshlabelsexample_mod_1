@@ -16,7 +16,7 @@ end
 -- Split text into chars. Regex to use only numbers 0-9
 function splitText(text)
     split_text = {}
-    for i in string.gmatch(text , "([0-9])") do
+    for i in string.gmatch(text , "(%S)") do
         table.insert(split_text,i)
     end
     return split_text
@@ -25,8 +25,8 @@ end
 -- Take a given text and returns the correct meshlabel sequence
 function generateLabelText(text_table, label_colour)
     meshlabel_sequence = {}
-    for i, number in ipairs(text_table) do
-        meshlabel_name = mapToMeshlabel(number, label_colour)
+    for i, char in ipairs(text_table) do
+        meshlabel_name = mapToMeshlabel(char, label_colour)
         table.insert(meshlabel_sequence, meshlabel_name)
     end
     return meshlabel_sequence -- return {"b_1", "b_5", "b_0", "b_2", "b_4", "b_6"}
@@ -80,66 +80,12 @@ end
 -- Take a given char and return correct meshlabel.
 function mapToMeshlabel(char, label_colour)
     if label_colour == "BLACK" then
-        if char == "1" then
-            return "b_1"
-        end
-        if char == "2" then
-            return "b_2"
-        end
-        if char == "3" then
-            return "b_3"
-        end
-        if char == "4" then
-            return "b_4"
-        end
-        if char == "5" then
-            return "b_5"
-        end
-        if char == "6" then
-            return "b_6"
-        end
-        if char == "7" then
-            return "b_7"
-        end
-        if char == "8" then
-            return "b_8"
-        end
-        if char == "9" then
-            return "b_9"
-        end
-        if char == "0" then
-            return "b_0"
+        if string.match(char, '[0-9a-zA-Z]') then
+            return "b_"..char
         end
     elseif label_colour == "WHITE" then
-        if char == "1" then
-            return "w_1"
-        end
-        if char == "2" then
-            return "w_2"
-        end
-        if char == "3" then
-            return "w_3"
-        end
-        if char == "4" then
-            return "w_4"
-        end
-        if char == "5" then
-            return "w_5"
-        end
-        if char == "6" then
-            return "w_6"
-        end
-        if char == "7" then
-            return "w_7"
-        end
-        if char == "8" then
-            return "w_8"
-        end
-        if char == "9" then
-            return "w_9"
-        end
-        if char == "0" then
-            return "w_0"
+        if string.match(char, '[0-9a-zA-Z]') then
+            return "w_"..char
         end
     else
         return "b_1"

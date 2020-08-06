@@ -3,7 +3,6 @@ yl_numberutil = {}
 
 -- Generate a number from the input.
 -- x = random
--- s = space (to be implemented)
 function yl_numberutil.generate(input)
     input = string.lower(input)
     input_table = splitToChar(input)
@@ -14,7 +13,8 @@ function yl_numberutil.generate(input)
 end
 
 function yl_numberutil.generateRange(min, max)
-    return math.random(tonumber(min), tonumber(max))
+    result = math.random(tonumber(min), tonumber(max))
+    return tostring(result)
 end
 
 function chooseNumber(char)

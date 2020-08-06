@@ -8,6 +8,9 @@ local train_number = yl_numberutil.generate("1502xx")
 
 transf = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 9.86, 0, 1.94, 1, }
 meshlabel = yl_meshlabelutil.createMeshlabel("BLACK", train_number, transf)
+
+transf2 = {0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 4.86, 0, 1.94, 1, }
+meshlabel2 = yl_meshlabelutil.createMeshlabel("WHITE", "hello world", transf2)
 --------------------------------
 
 function data()
@@ -28,6 +31,7 @@ return {
 			node = {
 				children = {
 					meshlabel, --MESHLABEL
+					meshlabel2, --MESHLABEL
 				},
 				name = "RootNode",
 				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },

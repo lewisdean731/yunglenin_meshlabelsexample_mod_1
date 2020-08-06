@@ -8,19 +8,19 @@ return {
 			indices = {
 				normal = {
 					count = 24,
-					offset = 156,
+					offset = 132,
 				},
 				position = {
 					count = 24,
-					offset = 180,
+					offset = 108,
 				},
 				tangent = {
 					count = 24,
-					offset = 132,
+					offset = 156,
 				},
 				uv0 = {
 					count = 24,
-					offset = 108,
+					offset = 180,
 				},
 			},
 		}, 
@@ -34,17 +34,17 @@ return {
 		position = {
 			count = 48,
 			numComp = 3,
-			offset = 60,
+			offset = 0,
 		},
 		tangent = {
 			count = 16,
 			numComp = 4,
-			offset = 32,
+			offset = 60,
 		},
 		uv0 = {
 			count = 32,
 			numComp = 2,
-			offset = 0,
+			offset = 76,
 		},
 	},
 }
