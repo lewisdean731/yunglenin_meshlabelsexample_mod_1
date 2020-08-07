@@ -1,11 +1,11 @@
 function data()
 return {
 	info = {
-	minorVersion = 0, -- minor version, count up from 0
+	minorVersion = 2, -- minor version, count up from 0
 	severityAdd = "NONE", -- OPTIONAL "NONE", "WARNING" or "CRITICAL"
 	severityRemove = "NONE", -- OPTIONAL "NONE", "WARNING" or "CRITICAL"
 	name = _("Meshlabels"), -- OPTIONAL mod name
-	description = _("see description"), -- OPTIONAL description
+	description = _("See README"), -- OPTIONAL description
 	authors = { -- OPTIONAL one or multiple authors
 		{
 			name = "Yung Lenin", -- author name
