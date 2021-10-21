@@ -2,6 +2,8 @@
 
 My implementation of 'mesh labels' in Transport Fever 2.
 
+Available on the [Steam Workshop](https://steamcommunity.com/workshop/filedetails/?id=2155647805).
+
 ## Installation
 
 Copy the ```res/``` folder into the main directory of your mod, so that it's merged into your own ```res/``` folder.
